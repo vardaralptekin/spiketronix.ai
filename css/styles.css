@@ -738,13 +738,6 @@ h2 {
     0 0 44px rgba(0, 211, 177, 0.12);
 }
 
-.core-chip {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 211, 177, 0.2);
-}
-
 .flat-core svg {
   width: 110px;
 }
@@ -1468,31 +1461,118 @@ h2 {
   letter-spacing: 0.055em;
 }
 
-/* Hero chip render */
-.hero-chip-frame {
+/* Animated 3D chip (SVG) */
+.chip3d {
   position: relative;
-  border: 1px solid rgba(0, 211, 177, 0.22);
-  border-radius: 16px;
-  overflow: hidden;
-  background: #05100f;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.02),
-    0 30px 80px rgba(0, 0, 0, 0.5),
-    0 0 60px rgba(0, 211, 177, 0.14);
 }
 
-.hero-chip-frame::after {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), transparent 40%);
-  content: "";
-}
-
-.hero-chip {
+.chip3d-svg {
   display: block;
   width: 100%;
   height: auto;
+  overflow: visible;
+}
+
+.chip-topedge { fill: none; stroke: #5fffe1; stroke-width: 1.4; opacity: 0.5; }
+.chip-sideR { fill: url(#gSideR); stroke: #0affd8; stroke-width: 1; stroke-opacity: 0.3; }
+.chip-sideF { fill: url(#gSideF); stroke: #0affd8; stroke-width: 1; stroke-opacity: 0.25; }
+
+.chip-edgeglow polygon {
+  fill: none;
+  stroke: #00d3b1;
+  stroke-width: 11;
+  filter: url(#glow);
+  animation: chipEdge 4s ease-in-out infinite;
+}
+
+.chip-pins polygon {
+  fill: #59707c;
+  stroke: #9fe9df;
+  stroke-width: 0.4;
+  stroke-opacity: 0.3;
+}
+.chip-pins.front polygon { fill: #6a828f; }
+
+.chip-traces polyline {
+  fill: none;
+  stroke: #00d3b1;
+  stroke-width: 1.5;
+  stroke-opacity: 0.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: url(#soft);
+  stroke-dasharray: 6 10;
+  animation: chipFlow 2.4s linear infinite;
+}
+
+.chip-traces .tdot {
+  fill: #65ffe6;
+  filter: url(#soft);
+  animation: chipDot 2.8s ease-in-out infinite;
+}
+
+.chip-topface { }
+.chip-topsheen { }
+
+.chip-pulse {
+  fill: none;
+  stroke: #3dffe2;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: url(#soft);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: chipTrace 4.4s cubic-bezier(.62,0,.35,1) infinite;
+}
+
+.chip-word {
+  fill: #eafffb;
+  font-family: var(--sans);
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.chip-sub {
+  fill: #6f8a86;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 3px;
+}
+
+.chip-scan line {
+  stroke: #8bffea;
+  stroke-width: 3;
+  opacity: 0.45;
+  filter: url(#soft);
+}
+
+.chip-under {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: chipUnder 4.5s ease-in-out infinite;
+}
+
+@keyframes chipUnder {
+  0%, 100% { opacity: 0.7; transform: scale(0.95); }
+  50%      { opacity: 1;   transform: scale(1.05); }
+}
+@keyframes chipEdge {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 0.75; }
+}
+@keyframes chipFlow {
+  to { stroke-dashoffset: -16; }
+}
+@keyframes chipDot {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 1; }
+}
+@keyframes chipTrace {
+  0%   { stroke-dashoffset: 100; }
+  55%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
 }
 
 /* Larger section typography */
@@ -2126,7 +2206,14 @@ h2 {
   .ring-one-v4,
   .ring-two-v4,
   .feram-scan-v4,
-  .imc-output-v4 path:first-child {
+  .imc-output-v4 path:first-child,
+  .chip-under,
+  .chip-edgeglow polygon,
+  .chip-traces polyline,
+  .chip-traces .tdot,
+  .chip-pulse {
     animation: none;
   }
+  .chip-pulse { stroke-dashoffset: 0; }
+  .chip-scan { display: none; }
 }
