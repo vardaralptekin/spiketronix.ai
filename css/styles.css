@@ -1525,7 +1525,7 @@ h2 {
   animation: chipTrace 4.6s cubic-bezier(.62,0,.35,1) infinite;
 }
 
-.chip-word { fill: #9fdfd6; opacity: 0.4; font-family: var(--sans); font-size: 17px; font-weight: 600; letter-spacing: 5px; }
+.chip-word { fill: #d7f4ee; opacity: 0.72; font-family: var(--sans); font-size: 18px; font-weight: 600; letter-spacing: 3.5px; }
 .chip-scan line { stroke: #9dffee; stroke-width: 2.5; opacity: 0.32; filter: url(#fSoft); }
 
 .chip-under { transform-box: fill-box; transform-origin: center; animation: chipUnder 4.5s ease-in-out infinite; }
