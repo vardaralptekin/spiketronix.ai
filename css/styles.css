@@ -796,14 +796,48 @@ h2 {
 }
 
 .architecture-figure-media {
-  padding: 22px 22px 0;
+  padding: 20px 24px 4px;
+  background:
+    radial-gradient(circle at 32% 42%, rgba(0, 211, 177, 0.08), transparent 55%),
+    #060f15;
+  border-bottom: 1px solid var(--line);
 }
 
-.architecture-figure-media img {
+.stack-svg {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 10px 10px 0 0;
+  overflow: visible;
+}
+
+/* Exploded architecture stack */
+.stack-svg .lz-top { fill: url(#lzTop); opacity: 0.58; }
+.stack-svg .lz-edge { fill: none; stroke: #43f2d6; stroke-width: 1.4; opacity: 0.7; }
+.stack-svg .lz-sideR { fill: url(#lzSideR); stroke: #0affd8; stroke-width: 0.8; stroke-opacity: 0.35; }
+.stack-svg .lz-sideF { fill: url(#lzSideF); stroke: #0affd8; stroke-width: 0.8; stroke-opacity: 0.3; }
+.stack-svg .lz-motif { opacity: 0.92; }
+.stack-svg .mdot { fill: #5cffe4; opacity: 0.9; }
+.stack-svg .mline { stroke: #2fd9bd; stroke-width: 1.4; opacity: 0.55; }
+.stack-svg .mpath { fill: none; stroke: #6effe8; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; opacity: 0.95; filter: url(#lzSoft); }
+.stack-svg .lz-conn { fill: none; stroke: #2a9384; stroke-width: 1.2; stroke-dasharray: 2 4; }
+.stack-svg .lz-cend { fill: #5cffe4; }
+.stack-svg .lz-num { fill: var(--teal); font-family: var(--mono); font-size: 12px; letter-spacing: 1px; }
+.stack-svg .lz-name { fill: #e7f6f3; font-family: var(--sans); font-size: 19px; font-weight: 600; letter-spacing: 0.5px; }
+
+.stack-svg .layer {
+  transform-box: view-box;
+  animation: lzFloat 6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.5s);
+}
+.stack-svg .lz-cend { animation: lzBlink 2.6s ease-in-out infinite; }
+
+@keyframes lzFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+@keyframes lzBlink {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
 }
 
 .architecture-figure figcaption {
@@ -1462,118 +1496,45 @@ h2 {
 }
 
 /* Animated 3D chip (SVG) */
-.chip3d {
-  position: relative;
-}
+.chip3d { position: relative; }
+.chip3d-svg { display: block; width: 100%; height: auto; overflow: visible; }
 
-.chip3d-svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
+.chip-topedge { fill: none; stroke: #7dffe8; stroke-width: 1.3; opacity: 0.55; }
+.chip-sideR { fill: url(#cSideR); stroke: #0affd8; stroke-width: 1; stroke-opacity: 0.35; }
+.chip-sideF { fill: url(#cSideF); stroke: #0affd8; stroke-width: 1; stroke-opacity: 0.28; }
 
-.chip-topedge { fill: none; stroke: #5fffe1; stroke-width: 1.4; opacity: 0.5; }
-.chip-sideR { fill: url(#gSideR); stroke: #0affd8; stroke-width: 1; stroke-opacity: 0.3; }
-.chip-sideF { fill: url(#gSideF); stroke: #0affd8; stroke-width: 1; stroke-opacity: 0.25; }
+.chip-pins polygon { fill: #3f5661; stroke: #0b1418; stroke-width: 0.5; }
+.chip-pins.front polygon { fill: #4d6672; }
 
-.chip-edgeglow polygon {
-  fill: none;
-  stroke: #00d3b1;
-  stroke-width: 11;
-  filter: url(#glow);
-  animation: chipEdge 4s ease-in-out infinite;
+.chip-rim polyline {
+  fill: none; stroke: #5effe0; stroke-width: 4.5; stroke-linecap: round;
+  filter: url(#fGlow); opacity: 0.85; animation: chipEdge 4s ease-in-out infinite;
 }
-
-.chip-pins polygon {
-  fill: #59707c;
-  stroke: #9fe9df;
-  stroke-width: 0.4;
-  stroke-opacity: 0.3;
-}
-.chip-pins.front polygon { fill: #6a828f; }
+.chip-rim.front polyline { stroke-width: 5; opacity: 0.95; }
 
 .chip-traces polyline {
-  fill: none;
-  stroke: #00d3b1;
-  stroke-width: 1.5;
-  stroke-opacity: 0.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter: url(#soft);
-  stroke-dasharray: 6 10;
-  animation: chipFlow 2.4s linear infinite;
+  fill: none; stroke: #0bd7b6; stroke-width: 1.3; stroke-opacity: 0.38;
+  stroke-linecap: square; filter: url(#fSoft);
+  stroke-dasharray: 5 9; animation: chipFlow 2.6s linear infinite;
 }
-
-.chip-traces .tdot {
-  fill: #65ffe6;
-  filter: url(#soft);
-  animation: chipDot 2.8s ease-in-out infinite;
-}
-
-.chip-topface { }
-.chip-topsheen { }
+.chip-vias .tvia { fill: #5cffe4; filter: url(#fSoft); animation: chipDot 2.8s ease-in-out infinite; }
 
 .chip-pulse {
-  fill: none;
-  stroke: #3dffe2;
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter: url(#soft);
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: chipTrace 4.4s cubic-bezier(.62,0,.35,1) infinite;
+  fill: none; stroke: #54ffe4; stroke-width: 5.5; stroke-linecap: round; stroke-linejoin: round;
+  filter: url(#fGlow); stroke-dasharray: 100; stroke-dashoffset: 100;
+  animation: chipTrace 4.6s cubic-bezier(.62,0,.35,1) infinite;
 }
 
-.chip-word {
-  fill: #eafffb;
-  font-family: var(--sans);
-  font-size: 23px;
-  font-weight: 600;
-  letter-spacing: 4px;
-}
+.chip-word { fill: #9fdfd6; opacity: 0.4; font-family: var(--sans); font-size: 17px; font-weight: 600; letter-spacing: 5px; }
+.chip-scan line { stroke: #9dffee; stroke-width: 2.5; opacity: 0.32; filter: url(#fSoft); }
 
-.chip-sub {
-  fill: #6f8a86;
-  font-family: var(--mono);
-  font-size: 9.5px;
-  letter-spacing: 3px;
-}
+.chip-under { transform-box: fill-box; transform-origin: center; animation: chipUnder 4.5s ease-in-out infinite; }
 
-.chip-scan line {
-  stroke: #8bffea;
-  stroke-width: 3;
-  opacity: 0.45;
-  filter: url(#soft);
-}
-
-.chip-under {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: chipUnder 4.5s ease-in-out infinite;
-}
-
-@keyframes chipUnder {
-  0%, 100% { opacity: 0.7; transform: scale(0.95); }
-  50%      { opacity: 1;   transform: scale(1.05); }
-}
-@keyframes chipEdge {
-  0%, 100% { opacity: 0.45; }
-  50%      { opacity: 0.75; }
-}
-@keyframes chipFlow {
-  to { stroke-dashoffset: -16; }
-}
-@keyframes chipDot {
-  0%, 100% { opacity: 0.35; }
-  50%      { opacity: 1; }
-}
-@keyframes chipTrace {
-  0%   { stroke-dashoffset: 100; }
-  55%  { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 0; }
-}
+@keyframes chipUnder { 0%, 100% { opacity: 0.72; transform: scale(0.96); } 50% { opacity: 1; transform: scale(1.05); } }
+@keyframes chipEdge { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+@keyframes chipFlow { to { stroke-dashoffset: -14; } }
+@keyframes chipDot { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+@keyframes chipTrace { 0% { stroke-dashoffset: 100; } 55% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
 
 /* Larger section typography */
 .section-heading .eyebrow {
@@ -2208,10 +2169,12 @@ h2 {
   .feram-scan-v4,
   .imc-output-v4 path:first-child,
   .chip-under,
-  .chip-edgeglow polygon,
+  .chip-rim polyline,
   .chip-traces polyline,
-  .chip-traces .tdot,
-  .chip-pulse {
+  .chip-vias .tvia,
+  .chip-pulse,
+  .stack-svg .layer,
+  .stack-svg .lz-cend {
     animation: none;
   }
   .chip-pulse { stroke-dashoffset: 0; }
