@@ -142,6 +142,20 @@ h2 {
   line-height: 1.75;
 }
 
+/* Boxed supporting statement — shares the problem-callout look */
+.section-copy.is-boxed {
+  align-self: end;
+  padding: 24px 26px 22px;
+  color: var(--ink-soft);
+  background:
+    linear-gradient(135deg, rgba(0, 211, 177, 0.08), transparent 65%),
+    rgba(4, 14, 21, 0.72);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--teal);
+  border-radius: 8px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.16);
+}
+
 /* Header */
 
 .site-header {
@@ -708,12 +722,11 @@ h2 {
   position: relative;
   z-index: 2;
   display: grid;
-  width: min(250px, 72%);
-  aspect-ratio: 1;
+  width: min(272px, 80%);
   place-items: center;
   align-content: center;
-  gap: 16px;
-  padding: 28px;
+  gap: 12px;
+  padding: 16px 16px 22px;
   background:
     linear-gradient(145deg, rgba(255,255,255,0.055), transparent),
     #07151d;
@@ -723,6 +736,13 @@ h2 {
     0 0 0 7px rgba(0, 211, 177, 0.025),
     0 20px 55px rgba(0,0,0,.38),
     0 0 44px rgba(0, 211, 177, 0.12);
+}
+
+.core-chip {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 211, 177, 0.2);
 }
 
 .flat-core svg {
@@ -772,6 +792,47 @@ h2 {
 
 .platform-equation b {
   color: var(--teal);
+}
+
+.architecture-figure {
+  margin-top: 34px;
+  overflow: hidden;
+  background: rgba(4, 13, 20, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.architecture-figure-media {
+  padding: 22px 22px 0;
+}
+
+.architecture-figure-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.architecture-figure figcaption {
+  display: grid;
+  gap: 10px;
+  padding: 24px 28px 28px;
+}
+
+.architecture-figure figcaption strong {
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.architecture-figure figcaption span {
+  max-width: 78ch;
+  color: var(--ink-muted);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 /* Roadmap */
@@ -882,7 +943,7 @@ h2 {
 .person-visual {
   position: relative;
   display: grid;
-  min-height: 230px;
+  min-height: 264px;
   place-items: center;
   overflow: hidden;
   background:
@@ -920,9 +981,12 @@ h2 {
 }
 
 .person-visual img {
+  position: relative;
+  z-index: 2;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 22%;
 }
 
 .person-content {
@@ -942,10 +1006,18 @@ h2 {
   font-size: 1.25rem;
 }
 
-.person-content p {
+.person-role {
   margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.person-bio {
+  margin-top: 12px;
   color: var(--ink-muted);
   font-size: 0.85rem;
+  line-height: 1.6;
 }
 
 .team-proof {
@@ -1396,6 +1468,33 @@ h2 {
   letter-spacing: 0.055em;
 }
 
+/* Hero chip render */
+.hero-chip-frame {
+  position: relative;
+  border: 1px solid rgba(0, 211, 177, 0.22);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #05100f;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.02),
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(0, 211, 177, 0.14);
+}
+
+.hero-chip-frame::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), transparent 40%);
+  content: "";
+}
+
+.hero-chip {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* Larger section typography */
 .section-heading .eyebrow {
   font-size: 13px;
@@ -1730,6 +1829,35 @@ h2 {
 .pillar-card-v4 .pillar-content p {
   font-size: 0.96rem;
   line-height: 1.7;
+}
+
+.pillar-spec {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.pillar-spec span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.pillar-spec span::before {
+  width: 4px;
+  height: 4px;
+  background: var(--teal);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--teal);
+  content: "";
 }
 
 /* Roadmap */
