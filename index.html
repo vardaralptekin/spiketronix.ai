@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Spiketronix | Neuromorphic Edge AI</title>
+  <meta
+    name="description"
+    content="Spiketronix develops ultra-low-power neuromorphic AI chips and software built on non-volatile compute-in-memory."
+  >
+
+  <link rel="icon" type="image/png" href="assets/spiketronix-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="page-texture" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Spiketronix home">
+        <img src="assets/spiketronix-logo.png" alt="Spiketronix">
+      </a>
+
+      <div class="nav-links">
+        <a href="#technology">Technology</a>
+        <a href="#platform">Platform</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#team">Team</a>
+      </div>
+
+      <a class="nav-button" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero is-visible">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">The enabler of neuromorphic edge AI</div>
+
+          <h1>
+            Always-on AI for the physical world,
+            <span>at microwatt budget.</span>
+          </h1>
+
+          <p class="hero-intro">
+            Spiketronix designs ultra-low-power neuromorphic AI chips, and the
+            software to run them, built on non-volatile compute-in-memory.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#technology">Explore the technology</a>
+            <a class="button button-ghost" href="#contact">Contact us</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Flat top-down SYNAPSE chip and signal path">
+          <svg class="soc-visual" viewBox="0 0 960 720" role="img" aria-label="Flat top-down neuromorphic system on chip">
+            <defs>
+              <linearGradient id="chipFace" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#11232c"></stop>
+                <stop offset="100%" stop-color="#071218"></stop>
+              </linearGradient>
+              <linearGradient id="trace" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#00d3b1" stop-opacity="0"></stop>
+                <stop offset="45%" stop-color="#00d3b1" stop-opacity=".9"></stop>
+                <stop offset="100%" stop-color="#6bffe7" stop-opacity=".15"></stop>
+              </linearGradient>
+              <filter id="softGlow">
+                <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                <feMerge>
+                  <feMergeNode in="blur"></feMergeNode>
+                  <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <g class="board-grid">
+              <path d="M20 80H940M20 160H940M20 240H940M20 320H940M20 400H940M20 480H940M20 560H940M20 640H940"></path>
+              <path d="M80 20V700M160 20V700M240 20V700M320 20V700M400 20V700M480 20V700M560 20V700M640 20V700M720 20V700M800 20V700M880 20V700"></path>
+            </g>
+
+            <g class="circuit-traces">
+              <path d="M0 126H178L232 180H330"></path>
+              <path d="M0 236H132L222 326H330"></path>
+              <path d="M0 566H180L252 494H330"></path>
+              <path d="M630 180H728L790 118H960"></path>
+              <path d="M630 320H764L836 248H960"></path>
+              <path d="M630 500H742L818 576H960"></path>
+              <path d="M478 0V96"></path>
+              <path d="M478 624V720"></path>
+            </g>
+
+            <g class="trace-points">
+              <circle cx="178" cy="126" r="5"></circle>
+              <circle cx="132" cy="236" r="5"></circle>
+              <circle cx="180" cy="566" r="5"></circle>
+              <circle cx="790" cy="118" r="5"></circle>
+              <circle cx="836" cy="248" r="5"></circle>
+              <circle cx="818" cy="576" r="5"></circle>
+            </g>
+
+            <rect class="chip-halo" x="306" y="96" width="348" height="528" rx="42"></rect>
+
+            <g class="pins pins-top">
+              <rect x="346" y="70" width="18" height="42" rx="4"></rect>
+              <rect x="386" y="70" width="18" height="42" rx="4"></rect>
+              <rect x="426" y="70" width="18" height="42" rx="4"></rect>
+              <rect x="466" y="70" width="18" height="42" rx="4"></rect>
+              <rect x="506" y="70" width="18" height="42" rx="4"></rect>
+              <rect x="546" y="70" width="18" height="42" rx="4"></rect>
+              <rect x="586" y="70" width="18" height="42" rx="4"></rect>
+            </g>
+
+            <g class="pins pins-bottom">
+              <rect x="346" y="608" width="18" height="42" rx="4"></rect>
+              <rect x="386" y="608" width="18" height="42" rx="4"></rect>
+              <rect x="426" y="608" width="18" height="42" rx="4"></rect>
+              <rect x="466" y="608" width="18" height="42" rx="4"></rect>
+              <rect x="506" y="608" width="18" height="42" rx="4"></rect>
+              <rect x="546" y="608" width="18" height="42" rx="4"></rect>
+              <rect x="586" y="608" width="18" height="42" rx="4"></rect>
+            </g>
+
+            <g class="pins pins-left">
+              <rect x="280" y="158" width="42" height="18" rx="4"></rect>
+              <rect x="280" y="212" width="42" height="18" rx="4"></rect>
+              <rect x="280" y="266" width="42" height="18" rx="4"></rect>
+              <rect x="280" y="320" width="42" height="18" rx="4"></rect>
+              <rect x="280" y="374" width="42" height="18" rx="4"></rect>
+              <rect x="280" y="428" width="42" height="18" rx="4"></rect>
+              <rect x="280" y="482" width="42" height="18" rx="4"></rect>
+              <rect x="280" y="536" width="42" height="18" rx="4"></rect>
+            </g>
+
+            <g class="pins pins-right">
+              <rect x="638" y="158" width="42" height="18" rx="4"></rect>
+              <rect x="638" y="212" width="42" height="18" rx="4"></rect>
+              <rect x="638" y="266" width="42" height="18" rx="4"></rect>
+              <rect x="638" y="320" width="42" height="18" rx="4"></rect>
+              <rect x="638" y="374" width="42" height="18" rx="4"></rect>
+              <rect x="638" y="428" width="42" height="18" rx="4"></rect>
+              <rect x="638" y="482" width="42" height="18" rx="4"></rect>
+              <rect x="638" y="536" width="42" height="18" rx="4"></rect>
+            </g>
+
+            <rect class="chip-face" x="322" y="112" width="316" height="496" rx="30"></rect>
+            <rect class="chip-inner" x="346" y="136" width="268" height="448" rx="22"></rect>
+
+            <g class="pulse-mark" filter="url(#softGlow)">
+              <path d="M382 352H430L452 328L472 396L504 266L532 432L558 330L578 368H600"></path>
+            </g>
+
+            <text class="synapse-name" x="480" y="500" text-anchor="middle">SYNAPSE</text>
+            <text class="synapse-caption" x="480" y="532" text-anchor="middle">NEUROMORPHIC EDGE AI</text>
+
+            <g class="signal-wave">
+              <path d="M44 645H192L210 632L228 652L248 514L270 690L292 560L312 660L332 618L352 645H916"></path>
+            </g>
+          </svg>
+
+          <div class="hero-visual-label">
+            <span>Event-driven</span>
+            <i></i>
+            <span>Non-volatile</span>
+            <i></i>
+            <span>In-memory</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section problem-section">
+      <div class="wrap">
+        <div class="section-heading split-heading">
+          <div>
+            <div class="eyebrow">Why edge intelligence must change</div>
+            <h2>Cloud transfer costs too much. Idle waiting burns the rest.</h2>
+          </div>
+
+          <aside class="problem-callout">
+            <span>Local by design</span>
+            <p>
+              The intelligence has to live on the device: compute locally,
+              stay asleep until an event, and send only the decision.
+            </p>
+            <div class="problem-callout-signal" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </aside>
+        </div>
+
+        <div class="need-grid">
+          <article class="need-card">
+            <div class="need-icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M25 4h14v7h4v8h-4v8H25v-8h-4v-8h4z"></path>
+                <path d="M30 27v13h10L26 60V45H16z"></path>
+              </svg>
+            </div>
+            <span>Power</span>
+            <h3>Years on a coin cell, or self-powered.</h3>
+            <p>Rare events should not require a processor and volatile memory to remain active around the clock.</p>
+          </article>
+
+          <article class="need-card">
+            <div class="need-icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="32" cy="32" r="25"></circle>
+                <path d="M32 16v18l13 8"></path>
+                <path d="M8 32h7M49 32h7"></path>
+              </svg>
+            </div>
+            <span>Speed</span>
+            <h3>Decide in microseconds, on the device.</h3>
+            <p>Local inference removes network delay and reacts while the signal still matters.</p>
+          </article>
+
+          <article class="need-card">
+            <div class="need-icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 5l22 9v15c0 14-9 24-22 30C19 53 10 43 10 29V14z"></path>
+                <path d="M22 32l7 7 14-16"></path>
+              </svg>
+            </div>
+            <span>Safety</span>
+            <h3>Catch the fault before the machine fails.</h3>
+            <p>Continuous local sensing keeps critical data private and surfaces early warning patterns.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology" class="section technology-section">
+      <div class="wrap">
+        <div class="section-heading split-heading">
+          <div>
+            <div class="eyebrow">Three technologies, one solution</div>
+            <h2>Built around the sparse, temporal nature of the physical world.</h2>
+          </div>
+
+          <p class="section-copy">
+            Each pillar removes a different source of wasted energy. Together,
+            they make always-on intelligence practical.
+          </p>
+        </div>
+
+        <div class="pillar-grid pillar-grid-v4">
+          <article class="pillar-card pillar-card-v4">
+            <div class="pillar-visual-v4 neuro-visual-v4" aria-label="Sparse event-driven neuromorphic network">
+              <svg viewBox="0 0 520 320" role="img" aria-hidden="true">
+                <defs>
+                  <radialGradient id="neuroCoreV4" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#eafffb"></stop>
+                    <stop offset="18%" stop-color="#65ffe6"></stop>
+                    <stop offset="55%" stop-color="#00d3b1" stop-opacity=".48"></stop>
+                    <stop offset="100%" stop-color="#00d3b1" stop-opacity="0"></stop>
+                  </radialGradient>
+                </defs>
+
+                <g class="neuro-grid-v4">
+                  <path d="M0 64H520M0 128H520M0 192H520M0 256H520"></path>
+                  <path d="M86 0V320M173 0V320M260 0V320M347 0V320M434 0V320"></path>
+                </g>
+
+                <g class="neuro-links-v4">
+                  <path d="M260 160C218 120 196 75 148 45"></path>
+                  <path d="M260 160C205 153 156 144 102 158"></path>
+                  <path d="M260 160C213 195 184 236 142 276"></path>
+                  <path d="M260 160C302 117 334 76 383 44"></path>
+                  <path d="M260 160C315 152 362 137 422 156"></path>
+                  <path d="M260 160C304 197 341 239 390 276"></path>
+                  <path d="M148 45L108 25M148 45L112 78"></path>
+                  <path d="M102 158L51 132M102 158L47 188"></path>
+                  <path d="M142 276L99 300M142 276L112 235"></path>
+                  <path d="M383 44L424 20M383 44L420 80"></path>
+                  <path d="M422 156L474 126M422 156L477 187"></path>
+                  <path d="M390 276L435 302M390 276L420 235"></path>
+                </g>
+
+                <circle cx="260" cy="160" r="68" fill="url(#neuroCoreV4)"></circle>
+                <circle class="neuro-core-v4" cx="260" cy="160" r="13"></circle>
+                <circle class="neuro-ring-v4 ring-one-v4" cx="260" cy="160" r="34"></circle>
+                <circle class="neuro-ring-v4 ring-two-v4" cx="260" cy="160" r="58"></circle>
+
+                <g class="event-points-v4">
+                  <circle cx="148" cy="45" r="4"></circle>
+                  <circle cx="102" cy="158" r="4"></circle>
+                  <circle cx="142" cy="276" r="4"></circle>
+                  <circle cx="383" cy="44" r="4"></circle>
+                  <circle cx="422" cy="156" r="4"></circle>
+                  <circle cx="390" cy="276" r="4"></circle>
+                </g>
+
+                <path class="event-trace-v4" d="M30 286H122L139 277L151 291L165 242L179 307L194 258L209 294L224 277H490"></path>
+              </svg>
+
+              <div class="visual-status-v4">
+                <span><b></b> Sparse activity</span>
+                <span>Compute on event</span>
+              </div>
+            </div>
+
+            <div class="pillar-content">
+              <span>Neuromorphic</span>
+              <h3>Sleeps until something changes.</h3>
+              <p>
+                Event-driven neurons remain silent between changes. Time and sequence
+                are built into the computation, making spiking networks natural for
+                vibration, sound and biosignals.
+              </p>
+            </div>
+          </article>
+
+          <article class="pillar-card pillar-card-v4">
+            <div class="pillar-visual-v4 feram-visual-v4" aria-label="Non-volatile FeRAM memory retaining model weights">
+              <div class="feram-frame-v4">
+                <div class="feram-array-v4" aria-hidden="true">
+                  <span></span><span class="active"></span><span></span><span></span><span class="active"></span><span></span><span></span>
+                  <span class="active"></span><span></span><span></span><span class="active"></span><span></span><span></span><span class="active"></span>
+                  <span></span><span></span><span class="active"></span><span></span><span></span><span class="active"></span><span></span>
+                  <span></span><span class="active"></span><span></span><span></span><span class="active"></span><span></span><span></span>
+                  <span class="active"></span><span></span><span></span><span class="active"></span><span></span><span></span><span class="active"></span>
+                </div>
+                <div class="feram-scan-v4"></div>
+              </div>
+
+              <div class="feram-readout-v4">
+                <div>
+                  <span>Power rail</span>
+                  <strong class="power-off-v4">OFF</strong>
+                </div>
+                <i></i>
+                <div>
+                  <span>Model state</span>
+                  <strong>RETAINED</strong>
+                </div>
+              </div>
+
+              <div class="visual-status-v4">
+                <span><b></b> Zero standby state</span>
+                <span>Instant-on model</span>
+              </div>
+            </div>
+
+            <div class="pillar-content">
+              <span>Non-volatile FeRAM</span>
+              <h3>Remembers the model with power removed.</h3>
+              <p>
+                GF 22FDX FeRAM retains every weight with the chip fully off.
+                Instant-on state removes the standby cost of remembering the model.
+              </p>
+            </div>
+          </article>
+
+          <article class="pillar-card pillar-card-v4">
+            <div class="pillar-visual-v4 imc-visual-v4" aria-label="In-memory computing array">
+              <svg viewBox="0 0 520 320" role="img" aria-hidden="true">
+                <g class="imc-grid-v4">
+                  <rect x="154" y="54" width="214" height="214" rx="13"></rect>
+                  <path d="M154 97H368M154 140H368M154 183H368M154 226H368"></path>
+                  <path d="M197 54V268M240 54V268M283 54V268M326 54V268"></path>
+                </g>
+
+                <g class="imc-cells-v4">
+                  <rect x="204" y="104" width="29" height="29" rx="4"></rect>
+                  <rect x="247" y="104" width="29" height="29" rx="4"></rect>
+                  <rect x="290" y="147" width="29" height="29" rx="4"></rect>
+                  <rect x="247" y="190" width="29" height="29" rx="4"></rect>
+                  <rect x="290" y="190" width="29" height="29" rx="4"></rect>
+                </g>
+
+                <g class="imc-inputs-v4">
+                  <path d="M26 96H154M26 140H154M26 184H154M26 228H154"></path>
+                  <circle cx="64" cy="96" r="4"></circle>
+                  <circle cx="92" cy="140" r="4"></circle>
+                  <circle cx="52" cy="184" r="4"></circle>
+                  <circle cx="112" cy="228" r="4"></circle>
+                </g>
+
+                <g class="imc-output-v4">
+                  <path d="M368 161H494"></path>
+                  <circle cx="420" cy="161" r="5"></circle>
+                  <path d="M468 137L494 161L468 185"></path>
+                </g>
+              </svg>
+
+              <div class="visual-status-v4">
+                <span><b></b> Weights stay in place</span>
+                <span>Read + compute</span>
+              </div>
+            </div>
+
+            <div class="pillar-content">
+              <span>In-memory compute</span>
+              <h3>Computes where the weights are stored.</h3>
+              <p>
+                Read and compute become one step. No memory bus, no repeated fetch,
+                and no energy spent moving weights to a separate compute unit.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="platform" class="section platform-section">
+      <div class="wrap">
+        <div class="section-heading split-heading">
+          <div>
+            <div class="eyebrow">A complete platform</div>
+            <h2>From silicon architecture to trained model and deployment.</h2>
+          </div>
+
+          <p class="section-copy">
+            SYNAPSE is not an isolated accelerator block. Hardware and software
+            are designed together so the system can be integrated and used.
+          </p>
+        </div>
+
+        <div class="platform-frame">
+          <div class="platform-column">
+            <div class="platform-label">Plug-and-play hardware</div>
+
+            <article class="stack-item">
+              <div class="stack-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <rect x="11" y="11" width="26" height="26" rx="3"></rect>
+                  <path d="M18 18h12v12H18zM4 17h7M4 24h7M4 31h7M37 17h7M37 24h7M37 31h7M17 4v7M24 4v7M31 4v7M17 37v7M24 37v7M31 37v7"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Mixed-signal accelerator SoC</h3>
+                <p>The neuromorphic compute engine and memory system integrated as one chip platform.</p>
+              </div>
+            </article>
+
+            <article class="stack-item">
+              <div class="stack-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M6 15h36M6 33h36M14 9v12M24 9v12M34 9v12M14 27v12M24 27v12M34 27v12"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Standard digital interfaces</h3>
+                <p>Designed to connect with conventional embedded systems and host controllers.</p>
+              </div>
+            </article>
+
+            <article class="stack-item">
+              <div class="stack-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M7 14h34M7 24h34M7 34h34"></path>
+                  <circle cx="17" cy="14" r="4"></circle>
+                  <circle cx="31" cy="24" r="4"></circle>
+                  <circle cx="22" cy="34" r="4"></circle>
+                </svg>
+              </div>
+              <div>
+                <h3>On-chip calibration and control</h3>
+                <p>Device variation is handled inside the platform rather than pushed onto the customer.</p>
+              </div>
+            </article>
+
+            <article class="stack-item">
+              <div class="stack-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M13 7h22v8h6v26H7V15h6z"></path>
+                  <path d="M13 23h22M13 31h16"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Integration-ready platform</h3>
+                <p>A deployable architecture rather than a custom research demonstrator.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="platform-core">
+            <div class="core-ring core-ring-one"></div>
+            <div class="core-ring core-ring-two"></div>
+
+            <div class="flat-core">
+              <svg viewBox="0 0 150 46" aria-hidden="true">
+                <path d="M3 23h34l8-7 10 26 14-39 13 40 11-29 10 19 11-10h33"></path>
+              </svg>
+              <strong>SYNAPSE</strong>
+              <span>Neuromorphic edge AI platform</span>
+            </div>
+
+            <div class="platform-equation">
+              <span>Neuromorphic</span>
+              <b>+</b>
+              <span>Non-volatile</span>
+              <b>+</b>
+              <span>In-memory compute</span>
+            </div>
+          </div>
+
+          <div class="platform-column">
+            <div class="platform-label">Full software stack</div>
+
+            <article class="stack-item">
+              <div class="stack-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M24 6v36M6 24h36"></path>
+                  <circle cx="24" cy="24" r="11"></circle>
+                  <circle cx="24" cy="24" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h3>Hardware-aware AI training</h3>
+                <p>Models are trained around the actual memory, quantization and compute behaviour.</p>
+              </div>
+            </article>
+
+            <article class="stack-item">
+              <div class="stack-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M18 13L7 24l11 11M30 13l11 11-11 11M27 8L21 40"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Configuration SDK and drivers</h3>
+                <p>Standardized configuration and control instead of custom laboratory scripts.</p>
+              </div>
+            </article>
+
+            <article class="stack-item">
+              <div class="stack-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M24 5v27M14 15l10-10 10 10"></path>
+                  <rect x="8" y="31" width="32" height="11" rx="2"></rect>
+                </svg>
+              </div>
+              <div>
+                <h3>Model deployment toolchain</h3>
+                <p>Moves a trained network into a configured, deployable hardware implementation.</p>
+              </div>
+            </article>
+
+            <article class="stack-item">
+              <div class="stack-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M8 17a18 18 0 0130-6l3 4M40 31a18 18 0 01-30 6l-3-4"></path>
+                  <path d="M41 7v8h-8M7 41v-8h8"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Adaptive behaviour</h3>
+                <p>The deployed model can be calibrated to the device and its operating environment.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section roadmap-section roadmap-section-v4">
+      <div class="wrap">
+        <div class="section-heading split-heading">
+          <div>
+            <div class="eyebrow">Execution path</div>
+            <h2>From validated architecture to industrial deployment.</h2>
+          </div>
+
+          <p class="section-copy">
+            The difficult research groundwork is already behind us. The next phase
+            converts verified building blocks into a repeatable product platform.
+          </p>
+        </div>
+
+        <div class="roadmap-v4">
+          <div class="roadmap-line-v4" aria-hidden="true"></div>
+
+          <article class="milestone-v4">
+            <span class="milestone-year-v4">2027</span>
+            <h3>Architecture freeze</h3>
+            <div class="milestone-node-v4">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="10" y="10" width="28" height="28" rx="3"></rect>
+                <path d="M17 17h14v14H17zM4 18h6M4 30h6M38 18h6M38 30h6M18 4v6M30 4v6M18 38v6M30 38v6"></path>
+              </svg>
+            </div>
+            <p>Clear product scope and core platform locked.</p>
+            <span class="milestone-output-v4">Platform specification</span>
+          </article>
+
+          <article class="milestone-v4">
+            <span class="milestone-year-v4">2028</span>
+            <h3>Platform validation</h3>
+            <div class="milestone-node-v4">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M24 5l17 7v12c0 10-7 16-17 21C14 40 7 34 7 24V12z"></path>
+                <path d="M16 24l6 6 11-12"></path>
+              </svg>
+            </div>
+            <p>Working silicon platform and first pilot partner onboarded.</p>
+            <span class="milestone-output-v4">Validated silicon</span>
+          </article>
+
+          <article class="milestone-v4">
+            <span class="milestone-year-v4">2029</span>
+            <h3>Pilot readiness</h3>
+            <div class="milestone-node-v4">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M28 7c7 3 11 8 13 15L28 35 14 37l2-14z"></path>
+                <path d="M19 29l-8 8M27 13l8 8M13 42l-7-7"></path>
+              </svg>
+            </div>
+            <p>Customer validation and manufacturing path confirmed.</p>
+            <span class="milestone-output-v4">Industrial pilot</span>
+          </article>
+
+          <article class="milestone-v4">
+            <span class="milestone-year-v4">2030</span>
+            <h3>Deployment</h3>
+            <div class="milestone-node-v4">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="18"></circle>
+                <path d="M6 24h36M24 6c5 5 8 11 8 18s-3 13-8 18M24 6c-5 5-8 11-8 18s3 13 8 18"></path>
+              </svg>
+            </div>
+            <p>Field pilots complete and commercial launch ready.</p>
+            <span class="milestone-output-v4">Market launch</span>
+          </article>
+        </div>
+
+        <svg class="roadmap-wave-v4" viewBox="0 0 1200 130" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 72C156 8 273 126 436 73C596 20 711 121 864 70C1010 21 1092 112 1200 65"></path>
+          <path d="M0 89C171 30 285 137 447 92C606 48 731 135 884 89C1025 47 1100 122 1200 82"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="team" class="section team-section">
+      <div class="wrap">
+        <div class="section-heading split-heading">
+          <div>
+            <div class="eyebrow">The team behind Spiketronix</div>
+            <h2>Deep expertise across device, system and commercialization.</h2>
+          </div>
+
+          <p class="section-copy">
+            Memory, mixed-signal hardware, digital architecture, neuromorphic
+            computing and business development are brought together from day one.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <article class="person-card">
+            <div class="person-visual">
+              <span>AV</span>
+              <!-- Replace with:
+              <img src="assets/team-alptekin.jpg" alt="Alptekin Vardar">
+              -->
+            </div>
+            <div class="person-content">
+              <span>System architecture</span>
+              <h3>Alptekin Vardar</h3>
+              <p>CEO and System Architect</p>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <div class="person-visual"><span>TK</span></div>
+            <div class="person-content">
+              <span>Neuromorphic technology</span>
+              <h3>Thomas Kämpfe</h3>
+              <p>Technology and Research</p>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <div class="person-visual"><span>MB</span></div>
+            <div class="person-content">
+              <span>Commercialization</span>
+              <h3>Martin Böttcher</h3>
+              <p>Finance and Business Development</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="team-proof">
+          <span>Fraunhofer IPMS spin-out</span>
+          <i></i>
+          <span>GF 22FDX FeRAM experience</span>
+          <i></i>
+          <span>Three silicon tapeouts</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <div class="eyebrow">Contact</div>
+          <h2>Get in touch.</h2>
+          <p>
+            We are happy to answer questions and provide more details about
+            Spiketronix. Reach out for collaborations, partnerships or additional information.
+          </p>
+
+          <div class="contact-meta">
+            <span>Spiketronix UG</span>
+            <span>Dresden, Saxony, Germany</span>
+          </div>
+        </div>
+
+        <form
+          id="contactForm"
+          class="contact-form"
+          data-recipient="alptekin.vardar@ipms.fraunhofer.de"
+        >
+          <label>
+            <span>Name</span>
+            <input name="name" type="text" autocomplete="name" required>
+          </label>
+
+          <label>
+            <span>Email address</span>
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+
+          <button class="button button-primary form-button" type="submit">
+            Send message
+          </button>
+
+          <p class="form-note">
+            This version opens the visitor's email application. Replace the recipient
+            address in the form when your company email is ready.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-content">
+      <img src="assets/spiketronix-logo.png" alt="Spiketronix">
+      <span>© 2026 Spiketronix UG. All rights reserved.</span>
+      <span>Neuromorphic intelligence for the physical world.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
