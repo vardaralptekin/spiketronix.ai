@@ -215,7 +215,7 @@
                 instant-on.
               </p>
               <div class="pillar-spec">
-                <span>GF 22FDX · 22 nm FD-SOI</span>
+                <span>GlobalFoundries 22nm FD-SOI</span>
                 <span>Zero standby</span>
               </div>
             </div>
@@ -267,8 +267,8 @@
 
           <p class="section-copy is-boxed">
             SYNAPSE isn't a bare accelerator block you're left to wire up. Silicon,
-            model and toolchain are co-designed as one system — so it drops into a
-            real product, not a lab bench.
+            model and toolchain are co-designed as one system, so it ships as a
+            finished part you can build a product around.
           </p>
         </div>
 
@@ -404,20 +404,20 @@
               <img src="assets/synapse-stack.png" alt="Exploded view of the SYNAPSE stack, from sensor front-end down to the packaged host base">
             </div>
             <ol class="architecture-legend">
-              <li><span class="lg-num">01</span><div><strong>Spiking neuron fabric</strong><em>Event-driven digital neurons on top.</em></div></li>
-              <li><span class="lg-num">02</span><div><strong>FeRAM compute-in-memory</strong><em>Weights stored and computed in place.</em></div></li>
-              <li><span class="lg-num">03</span><div><strong>Mixed-signal interface</strong><em>ADCs and on-chip sense amplifiers.</em></div></li>
-              <li><span class="lg-num">04</span><div><strong>Analog sensor front-end</strong><em>Vibration, sound and biosignals in.</em></div></li>
-              <li><span class="lg-num">05</span><div><strong>On-chip control</strong><em>Calibration and host interface.</em></div></li>
-              <li><span class="lg-num">06</span><div><strong>Packaged host SoC</strong><em>Single-chip, drop-in module.</em></div></li>
+              <li><span class="lg-num">01</span><div><strong>Hardware-aware SDK</strong><em>Training and deployment toolchain.</em></div></li>
+              <li><span class="lg-num">02</span><div><strong>On-chip control</strong><em>Calibration and host interface.</em></div></li>
+              <li><span class="lg-num">03</span><div><strong>Mixed-signal front-end</strong><em>Sensor input, ADCs and sense amps.</em></div></li>
+              <li><span class="lg-num">04</span><div><strong>Spiking neuron fabric</strong><em>Event-driven digital neurons.</em></div></li>
+              <li><span class="lg-num">05</span><div><strong>FeRAM compute-in-memory</strong><em>Weights stored and computed in place.</em></div></li>
+              <li><span class="lg-num">06</span><div><strong>Analog synapse crossbars</strong><em>The neuromorphic core, in silicon.</em></div></li>
             </ol>
           </div>
           <figcaption>
             <strong>Inside SYNAPSE</strong>
             <span>
-              A hardware-aware software stack drives digital spiking neurons and a
-              mixed-signal interface, sitting on analog crossbar arrays that compute
-              in memory — the architecture, in silicon.
+              A hardware-aware software stack drives the spiking neuron fabric and
+              mixed-signal front-end, all sitting on FeRAM crossbars that compute in
+              memory. The full architecture, realised in one chip.
             </span>
           </figcaption>
         </figure>
@@ -426,16 +426,9 @@
 
     <section id="team" class="section team-section">
       <div class="wrap">
-        <div class="section-heading split-heading">
-          <div>
-            <div class="eyebrow">The team behind Spiketronix</div>
-            <h2>Deep expertise across device, system and commercialization.</h2>
-          </div>
-
-          <p class="section-copy is-boxed">
-            Memory, mixed-signal hardware, digital architecture, neuromorphic
-            computing and business development are brought together from day one.
-          </p>
+        <div class="section-heading">
+          <div class="eyebrow">The team behind Spiketronix</div>
+          <h2>Deep expertise across device, system and commercialization.</h2>
         </div>
 
         <div class="team-grid">
@@ -444,10 +437,9 @@
               <img src="assets/team-alptekin.jpg" alt="Alptekin Vardar">
             </div>
             <div class="person-content">
-              <span>System architecture</span>
               <h3>Alptekin Vardar</h3>
+              <p class="person-bio">Edge-AI hardware and system architecture; PhD from TUM.</p>
               <p class="person-role">CEO &amp; System Architect</p>
-              <p class="person-bio">PhD in edge-AI hardware (TUM). Leads system architecture, with connections in Taiwan and the US.</p>
             </div>
           </article>
 
@@ -456,10 +448,9 @@
               <img src="assets/team-martin.jpg" alt="Martin Landgraf">
             </div>
             <div class="person-content">
-              <span>Finance &amp; strategy</span>
               <h3>Martin Landgraf</h3>
+              <p class="person-bio">Two decades in deep-tech business development and funding.</p>
               <p class="person-role">CFO &amp; Strategy</p>
-              <p class="person-bio">Decades in business development. Drives partnerships, funding and commercialization.</p>
             </div>
           </article>
 
@@ -468,10 +459,9 @@
               <img src="assets/team-thomas.jpg" alt="Thomas Kämpfe">
             </div>
             <div class="person-content">
-              <span>Science &amp; technology</span>
               <h3>Prof. Thomas Kämpfe</h3>
+              <p class="person-bio">FeRAM and neuromorphic devices; professor at Fraunhofer IPMS.</p>
               <p class="person-role">Professor &amp; Scientific Advisor</p>
-              <p class="person-bio">Professor and group leader at Fraunhofer IPMS. Leads fabrication readiness and the technology roadmap.</p>
             </div>
           </article>
         </div>

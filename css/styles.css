@@ -762,8 +762,8 @@ h2 {
 .flat-core > span {
   color: var(--ink-muted);
   font-family: var(--mono);
-  font-size: 8px;
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -1030,22 +1030,26 @@ h2 {
 }
 
 .person-content h3 {
-  margin-top: 14px;
-  font-size: 1.25rem;
-}
-
-.person-role {
-  margin-top: 4px;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  font-weight: 500;
+  margin-top: 0;
+  font-size: 1.3rem;
 }
 
 .person-bio {
-  margin-top: 12px;
+  margin-top: 10px;
   color: var(--ink-muted);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   line-height: 1.6;
+}
+
+.person-role {
+  margin-top: 12px;
+  color: var(--teal-light);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.team-section .section-heading h2 {
+  max-width: 26ch;
 }
 
 .team-proof {
@@ -1082,7 +1086,7 @@ h2 {
 }
 
 .contact-copy h2 {
-  font-size: clamp(3rem, 6vw, 5.6rem);
+  max-width: 15ch;
 }
 
 .contact-copy > p {
@@ -1341,7 +1345,7 @@ h2 {
   }
 
   .contact-copy h2 {
-    font-size: clamp(3.2rem, 15vw, 5rem);
+    max-width: 18ch;
   }
 
   .footer-content {
@@ -1679,14 +1683,13 @@ h2 {
 }
 
 .problem-section h2 {
-  max-width: 14ch;
-  font-size: clamp(2.7rem, 5vw, 4.65rem);
+  max-width: 15ch;
 }
 
 .problem-callout {
   position: relative;
   align-self: end;
-  max-width: 520px;
+  max-width: 620px;
   padding: 27px 28px 25px;
   overflow: hidden;
   background:
@@ -1710,8 +1713,8 @@ h2 {
 .problem-callout p {
   margin-top: 13px;
   color: var(--ink-soft);
-  font-size: 1.11rem;
-  line-height: 1.72;
+  font-size: 1.02rem;
+  line-height: 1.7;
 }
 
 .problem-callout-signal {
