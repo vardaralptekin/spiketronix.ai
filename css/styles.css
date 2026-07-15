@@ -14,8 +14,8 @@
   --teal-light: #63ffe5;
   --teal-dark: #006c5c;
   --violet: #6954ff;
-  --sans: "Manrope", Arial, sans-serif;
-  --mono: "IBM Plex Mono", monospace;
+  --sans: "Space Grotesk", Arial, sans-serif;
+  --mono: "Space Mono", ui-monospace, monospace;
   --shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
 }
 
