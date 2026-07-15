@@ -148,63 +148,34 @@
 
         <div class="pillar-grid pillar-grid-v4">
           <article class="pillar-card pillar-card-v4">
-            <div class="pillar-visual-v4 neuro-visual-v4" aria-label="Sparse event-driven neuromorphic network">
-              <svg viewBox="0 0 520 320" role="img" aria-hidden="true">
-                <defs>
-                  <radialGradient id="neuroCoreV4" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#eafffb"></stop>
-                    <stop offset="18%" stop-color="#65ffe6"></stop>
-                    <stop offset="55%" stop-color="#00d3b1" stop-opacity=".48"></stop>
-                    <stop offset="100%" stop-color="#00d3b1" stop-opacity="0"></stop>
-                  </radialGradient>
-                </defs>
-
-                <g class="neuro-grid-v4">
-                  <path d="M0 64H520M0 128H520M0 192H520M0 256H520"></path>
-                  <path d="M86 0V320M173 0V320M260 0V320M347 0V320M434 0V320"></path>
-                </g>
-
-                <g class="neuro-links-v4">
-                  <path d="M260 160C218 120 196 75 148 45"></path>
-                  <path d="M260 160C205 153 156 144 102 158"></path>
-                  <path d="M260 160C213 195 184 236 142 276"></path>
-                  <path d="M260 160C302 117 334 76 383 44"></path>
-                  <path d="M260 160C315 152 362 137 422 156"></path>
-                  <path d="M260 160C304 197 341 239 390 276"></path>
-                  <path d="M148 45L108 25M148 45L112 78"></path>
-                  <path d="M102 158L51 132M102 158L47 188"></path>
-                  <path d="M142 276L99 300M142 276L112 235"></path>
-                  <path d="M383 44L424 20M383 44L420 80"></path>
-                  <path d="M422 156L474 126M422 156L477 187"></path>
-                  <path d="M390 276L435 302M390 276L420 235"></path>
-                </g>
-
-                <circle cx="260" cy="160" r="68" fill="url(#neuroCoreV4)"></circle>
-                <circle class="neuro-core-v4" cx="260" cy="160" r="13"></circle>
-                <circle class="neuro-ring-v4 ring-one-v4" cx="260" cy="160" r="34"></circle>
-                <circle class="neuro-ring-v4 ring-two-v4" cx="260" cy="160" r="58"></circle>
-
-                <g class="event-points-v4">
-                  <circle cx="148" cy="45" r="4"></circle>
-                  <circle cx="102" cy="158" r="4"></circle>
-                  <circle cx="142" cy="276" r="4"></circle>
-                  <circle cx="383" cy="44" r="4"></circle>
-                  <circle cx="422" cy="156" r="4"></circle>
-                  <circle cx="390" cy="276" r="4"></circle>
-                </g>
-
-                <path class="event-trace-v4" d="M30 286H122L139 277L151 291L165 242L179 307L194 258L209 294L224 277H490"></path>
+            <div class="pillar-photo" aria-label="Sparse event-driven neuromorphic chip">
+              <img src="assets/web_neuron.png" alt="Neuromorphic chip: sparse input spikes converge on a processing core">
+              <svg class="pillar-anim" viewBox="0 0 900 402" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <defs><radialGradient id="npCore"><stop offset="0" stop-color="#eafffb"/><stop offset="40%" stop-color="#65ffe6" stop-opacity=".7"/><stop offset="100%" stop-color="#00d3b1" stop-opacity="0"/></radialGradient></defs>
+                <circle class="np-core" cx="450" cy="198" r="86" fill="url(#npCore)">
+                  <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" values="0;0;.95;.3;0" keyTimes="0;.4;.52;.72;1"/>
+                </circle>
+                <circle class="pa-dot" r="7">
+                  <animateMotion dur="3.2s" repeatCount="indefinite" keyTimes="0;.42;1" keyPoints="0;1;1" calcMode="linear" path="M6,72 L235,72 L300,150 L440,196"/>
+                  <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.06;.4;.46;1"/>
+                </circle>
+                <circle class="pa-dot" r="7">
+                  <animateMotion dur="3.2s" repeatCount="indefinite" keyTimes="0;.44;1" keyPoints="0;1;1" calcMode="linear" path="M6,190 L440,197"/>
+                  <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.42;.48;1"/>
+                </circle>
+                <circle class="pa-dot" r="7">
+                  <animateMotion dur="3.2s" repeatCount="indefinite" keyTimes="0;.46;1" keyPoints="0;1;1" calcMode="linear" path="M6,290 L235,290 L300,246 L440,200"/>
+                  <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.1;.44;.5;1"/>
+                </circle>
+                <circle class="pa-dot pa-out" r="7">
+                  <animateMotion dur="3.2s" repeatCount="indefinite" keyTimes="0;.58;.92;1" keyPoints="0;0;1;1" calcMode="linear" path="M470,196 L894,196"/>
+                  <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.57;.62;.88;.93;1"/>
+                </circle>
               </svg>
-
-              <div class="visual-status-v4">
-                <span><b></b> Sparse activity</span>
-                <span>Compute on event</span>
-              </div>
             </div>
-
             <div class="pillar-content">
-              <span>Neuromorphic</span>
-              <h3>Sleeps until something changes.</h3>
+              <h3 class="pillar-title">Neuromorphic</h3>
+              <p class="pillar-tagline">Sleeps until something changes.</p>
               <p>
                 Spiking neurons stay silent until their input changes, then emit a
                 brief spike — no event, no computation, no energy. Time and sequence
@@ -220,34 +191,23 @@
           </article>
 
           <article class="pillar-card pillar-card-v4">
-            <div class="pillar-visual-v4 feram-visual-v4" aria-label="Non-volatile FeRAM memory retaining model weights">
-              <div class="feram-frame-v4">
-                <div class="feram-array-v4" aria-hidden="true">
-                  <span></span><span class="active"></span><span></span><span></span><span class="active"></span><span></span><span></span>
-                  <span class="active"></span><span></span><span></span><span class="active"></span><span></span><span></span><span class="active"></span>
-                  <span></span><span></span><span class="active"></span><span></span><span></span><span class="active"></span><span></span>
-                  <span></span><span class="active"></span><span></span><span></span><span class="active"></span><span></span><span></span>
-                  <span class="active"></span><span></span><span></span><span class="active"></span><span></span><span></span><span class="active"></span>
-                </div>
-                <div class="feram-scan-v4"></div>
-              </div>
-
-              <div class="feram-readout-v4">
-                <div>
-                  <span>Power rail</span>
-                  <strong class="power-off-v4">OFF</strong>
-                </div>
-                <i></i>
-                <div>
-                  <span>Model state</span>
-                  <strong>RETAINED</strong>
-                </div>
-              </div>
+            <div class="pillar-photo" aria-label="Non-volatile FeRAM retaining the model with power off">
+              <img src="assets/web_feram.png" alt="FeRAM device with a ferroelectric polarization layer holding its state">
+              <svg class="pillar-anim" viewBox="0 0 900 401" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <defs>
+                  <clipPath id="feramBand"><rect x="255" y="80" width="448" height="90"/></clipPath>
+                  <linearGradient id="feramShim" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9dffee" stop-opacity="0"/><stop offset=".5" stop-color="#9dffee" stop-opacity=".5"/><stop offset="1" stop-color="#9dffee" stop-opacity="0"/></linearGradient>
+                </defs>
+                <g class="feram-shim" clip-path="url(#feramBand)">
+                  <rect x="-260" y="78" width="260" height="94" fill="url(#feramShim)">
+                    <animate attributeName="x" dur="5s" repeatCount="indefinite" values="-260;900" keyTimes="0;1" calcMode="linear"/>
+                  </rect>
+                </g>
+              </svg>
             </div>
-
             <div class="pillar-content">
-              <span>Non-volatile FeRAM</span>
-              <h3>Remembers the model with power removed.</h3>
+              <h3 class="pillar-title">Non-volatile FeRAM</h3>
+              <p class="pillar-tagline">Remembers the model with power removed.</p>
               <p>
                 Once compute is sparse, the real cost is remembering the model
                 through the long gaps between events. FeRAM holds every weight with
@@ -262,46 +222,26 @@
           </article>
 
           <article class="pillar-card pillar-card-v4">
-            <div class="pillar-visual-v4 imc-visual-v4" aria-label="In-memory computing array">
-              <svg viewBox="0 0 520 320" role="img" aria-hidden="true">
-                <g class="imc-grid-v4">
-                  <rect x="154" y="54" width="214" height="214" rx="13"></rect>
-                  <path d="M154 97H368M154 140H368M154 183H368M154 226H368"></path>
-                  <path d="M197 54V268M240 54V268M283 54V268M326 54V268"></path>
-                </g>
-
-                <g class="imc-cells-v4">
-                  <rect x="204" y="104" width="29" height="29" rx="4"></rect>
-                  <rect x="247" y="104" width="29" height="29" rx="4"></rect>
-                  <rect x="290" y="147" width="29" height="29" rx="4"></rect>
-                  <rect x="247" y="190" width="29" height="29" rx="4"></rect>
-                  <rect x="290" y="190" width="29" height="29" rx="4"></rect>
-                </g>
-
-                <g class="imc-inputs-v4">
-                  <path d="M26 96H154M26 140H154M26 184H154M26 228H154"></path>
-                  <circle cx="64" cy="96" r="4"></circle>
-                  <circle cx="92" cy="140" r="4"></circle>
-                  <circle cx="52" cy="184" r="4"></circle>
-                  <circle cx="112" cy="228" r="4"></circle>
-                </g>
-
-                <g class="imc-output-v4">
-                  <path d="M368 161H494"></path>
-                  <circle cx="420" cy="161" r="5"></circle>
-                  <path d="M468 137L494 161L468 185"></path>
+            <div class="pillar-photo" aria-label="In-memory compute crossbar array">
+              <img src="assets/web_imc.png" alt="Compute-in-memory crossbar array with an active row and column outputs">
+              <svg class="pillar-anim" viewBox="0 0 900 698" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <circle class="pa-dot" r="9">
+                  <animateMotion dur="4s" repeatCount="indefinite" keyTimes="0;.4;1" keyPoints="0;1;1" calcMode="linear" path="M205,266 L742,266"/>
+                  <animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.4;.46;1"/>
+                </circle>
+                <g class="imc-cols">
+                  <circle class="pa-dot" cx="268" r="6"><animateMotion dur="4s" repeatCount="indefinite" keyTimes="0;.5;.8;1" keyPoints="0;0;1;1" calcMode="linear" path="M0,266 L0,515"/><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.5;.55;.78;.84;1"/></circle>
+                  <circle class="pa-dot" cx="345" r="6"><animateMotion dur="4s" repeatCount="indefinite" keyTimes="0;.53;.83;1" keyPoints="0;0;1;1" calcMode="linear" path="M0,266 L0,515"/><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.53;.58;.81;.87;1"/></circle>
+                  <circle class="pa-dot" cx="422" r="6"><animateMotion dur="4s" repeatCount="indefinite" keyTimes="0;.56;.86;1" keyPoints="0;0;1;1" calcMode="linear" path="M0,266 L0,515"/><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.56;.61;.84;.9;1"/></circle>
+                  <circle class="pa-dot" cx="500" r="6"><animateMotion dur="4s" repeatCount="indefinite" keyTimes="0;.59;.89;1" keyPoints="0;0;1;1" calcMode="linear" path="M0,266 L0,515"/><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.59;.64;.87;.93;1"/></circle>
+                  <circle class="pa-dot" cx="578" r="6"><animateMotion dur="4s" repeatCount="indefinite" keyTimes="0;.62;.92;1" keyPoints="0;0;1;1" calcMode="linear" path="M0,266 L0,515"/><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.62;.67;.9;.96;1"/></circle>
+                  <circle class="pa-dot" cx="655" r="6"><animateMotion dur="4s" repeatCount="indefinite" keyTimes="0;.65;.95;1" keyPoints="0;0;1;1" calcMode="linear" path="M0,266 L0,515"/><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.65;.7;.93;.99;1"/></circle>
                 </g>
               </svg>
-
-              <div class="visual-status-v4">
-                <span><b></b> Weights stay in place</span>
-                <span>Read + compute</span>
-              </div>
             </div>
-
             <div class="pillar-content">
-              <span>In-memory compute</span>
-              <h3>Computes where the weights are stored.</h3>
+              <h3 class="pillar-title">In-memory compute</h3>
+              <p class="pillar-tagline">Computes where the weights are stored.</p>
               <p>
                 A conventional chip shuttles weights to a separate compute unit every
                 operation — and moving data wastes time and energy. Compute-in-memory
@@ -326,8 +266,9 @@
           </div>
 
           <p class="section-copy is-boxed">
-            SYNAPSE is not an isolated accelerator block. Hardware and software
-            are designed together so the system can be integrated and used.
+            SYNAPSE isn't a bare accelerator block you're left to wire up. Silicon,
+            model and toolchain are co-designed as one system — so it drops into a
+            real product, not a lab bench.
           </p>
         </div>
 
@@ -394,17 +335,9 @@
             <div class="core-ring core-ring-two"></div>
 
             <div class="flat-core">
-              <img class="core-chip" src="assets/synapse-chip.png" alt="SYNAPSE neuromorphic edge AI chip" width="1100" height="1100">
+              <img class="core-chip" src="assets/web_chip_direct.png" alt="SYNAPSE neuromorphic edge AI chip, top view" width="900" height="889">
               <strong>SYNAPSE</strong>
               <span>Neuromorphic edge AI platform</span>
-            </div>
-
-            <div class="platform-equation">
-              <span>Neuromorphic</span>
-              <b>+</b>
-              <span>Non-volatile</span>
-              <b>+</b>
-              <span>In-memory compute</span>
             </div>
           </div>
 
@@ -471,12 +404,12 @@
               <img src="assets/synapse-stack.png" alt="Exploded view of the SYNAPSE stack, from sensor front-end down to the packaged host base">
             </div>
             <ol class="architecture-legend">
-              <li><span class="lg-num">01</span><div><strong>Sensor front-end</strong><em>Analog vibration, sound and biosignals in.</em></div></li>
-              <li><span class="lg-num">02</span><div><strong>Mixed-signal interface</strong><em>ADCs and on-chip sense amplifiers.</em></div></li>
-              <li><span class="lg-num">03</span><div><strong>FeRAM compute-in-memory</strong><em>Weights stored and computed in place.</em></div></li>
-              <li><span class="lg-num">04</span><div><strong>Spiking neuron fabric</strong><em>Event-driven digital neurons.</em></div></li>
+              <li><span class="lg-num">01</span><div><strong>Spiking neuron fabric</strong><em>Event-driven digital neurons on top.</em></div></li>
+              <li><span class="lg-num">02</span><div><strong>FeRAM compute-in-memory</strong><em>Weights stored and computed in place.</em></div></li>
+              <li><span class="lg-num">03</span><div><strong>Mixed-signal interface</strong><em>ADCs and on-chip sense amplifiers.</em></div></li>
+              <li><span class="lg-num">04</span><div><strong>Analog sensor front-end</strong><em>Vibration, sound and biosignals in.</em></div></li>
               <li><span class="lg-num">05</span><div><strong>On-chip control</strong><em>Calibration and host interface.</em></div></li>
-              <li><span class="lg-num">06</span><div><strong>Hardware-aware SDK</strong><em>Training and deployment toolchain.</em></div></li>
+              <li><span class="lg-num">06</span><div><strong>Packaged host SoC</strong><em>Single-chip, drop-in module.</em></div></li>
             </ol>
           </div>
           <figcaption>
