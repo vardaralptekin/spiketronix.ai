@@ -1536,6 +1536,142 @@ h2 {
 @keyframes chipDot { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
 @keyframes chipTrace { 0% { stroke-dashoffset: 100; } 55% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
 
+/* Hero chip photo + live overlay */
+.chip-photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.chip-photo img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 34px 60px rgba(0, 0, 0, 0.55));
+  animation: chipFloat 7s ease-in-out infinite;
+}
+
+.chip-photo-glow {
+  position: absolute;
+  z-index: 1;
+  top: 56%;
+  left: 50%;
+  width: 74%;
+  height: 56%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(0, 211, 177, 0.55), rgba(0, 211, 177, 0.12) 45%, transparent 72%);
+  filter: blur(30px);
+  animation: chipGlow 4.6s ease-in-out infinite;
+}
+
+.chip-photo-scan {
+  position: absolute;
+  z-index: 3;
+  left: 12%;
+  right: 12%;
+  top: 8%;
+  height: 16%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(126, 255, 236, 0.22), transparent);
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: chipScan 6s ease-in-out infinite;
+}
+
+@keyframes chipFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes chipGlow { 0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.95); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.06); } }
+@keyframes chipScan {
+  0% { opacity: 0; transform: translateY(0); }
+  12% { opacity: 1; }
+  48% { opacity: 1; }
+  60% { opacity: 0; transform: translateY(320%); }
+  100% { opacity: 0; transform: translateY(320%); }
+}
+
+/* Platform core chip image */
+.flat-core {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  width: min(300px, 88%);
+  gap: 14px;
+}
+
+.core-chip {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.5));
+}
+
+/* Architecture figure: image + legend */
+.architecture-figure-inner {
+  display: grid;
+  gap: 22px;
+  padding: 24px;
+  align-items: center;
+}
+
+.architecture-figure-media {
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.architecture-figure-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 460px;
+  margin-inline: auto;
+  filter: drop-shadow(0 24px 55px rgba(0, 0, 0, 0.55));
+}
+
+.architecture-legend {
+  list-style: none;
+  display: grid;
+  gap: 15px;
+}
+
+.architecture-legend li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  align-items: start;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.architecture-legend li:last-child { border-bottom: none; padding-bottom: 0; }
+
+.lg-num {
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  padding-top: 3px;
+}
+
+.architecture-legend strong { display: block; font-size: 1.02rem; }
+
+.architecture-legend em {
+  display: block;
+  margin-top: 3px;
+  color: var(--ink-muted);
+  font-style: normal;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+@media (min-width: 860px) {
+  .architecture-figure-inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 380px);
+    gap: 46px;
+    padding: 40px 44px;
+  }
+}
+
 /* Larger section typography */
 .section-heading .eyebrow {
   font-size: 13px;
@@ -2174,7 +2310,10 @@ h2 {
   .chip-vias .tvia,
   .chip-pulse,
   .stack-svg .layer,
-  .stack-svg .lz-cend {
+  .stack-svg .lz-cend,
+  .chip-photo img,
+  .chip-photo-glow,
+  .chip-photo-scan {
     animation: none;
   }
   .chip-pulse { stroke-dashoffset: 0; }
