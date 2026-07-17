@@ -32,6 +32,8 @@
       <div class="nav-links">
         <a href="#technology">Technology</a>
         <a href="#platform">Platform</a>
+        <a href="#application">Use case</a>
+        <a href="#deployment">Deployment</a>
         <a href="#team">Team</a>
       </div>
 
@@ -422,6 +424,116 @@
             </span>
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section id="application" class="section application-section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">Always-on machine health monitoring</div>
+          <h2 class="full-title">Spiketronix intelligence at the point of sensing.</h2>
+        </div>
+
+        <div class="application-grid">
+          <div class="application-media">
+            <img src="assets/web_usecase.webp" alt="Spiketronix module monitoring an industrial motor" loading="lazy">
+          </div>
+
+          <div class="application-copy">
+            <p class="application-lead">
+              Industrial equipment often shows subtle changes long before a visible
+              fault or breakdown occurs.
+            </p>
+            <p>
+              Spiketronix learns the normal behaviour of a machine directly on the
+              device, detects deviations early and triggers an alert — without
+              continuously sending raw sensor data to the cloud.
+            </p>
+
+            <ul class="value-list">
+              <li><strong>Earlier warning</strong>Identify developing faults before they lead to unplanned downtime, costly maintenance or equipment damage.</li>
+              <li><strong>Years of autonomous operation</strong>Ultra-low-power processing enables continuous monitoring where cabling, frequent battery replacement or permanent connectivity are impractical.</li>
+              <li><strong>Decisions, not raw data</strong>Only relevant events and results leave the device, reducing bandwidth, keeping sensitive operational data local and simplifying integration.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="application-more">
+          <h3 class="application-more-title">Built for always-on sensing.</h3>
+          <p>
+            The same ultra-low-power architecture can be applied wherever continuous
+            local sensing and immediate decisions are required.
+          </p>
+
+          <ul class="example-grid">
+            <li class="example">
+              <div class="example-image">
+                <img src="assets/keyword.webp" alt="Keyword spotting" loading="lazy">
+              </div>
+              <div class="example-text">
+                <span class="example-name">Keyword spotting</span>
+                <p>Recognise spoken commands and wake-words on the device, without streaming audio to the cloud.</p>
+              </div>
+            </li>
+            <li class="example">
+              <div class="example-image">
+                <img src="assets/structure.webp" alt="Structural monitoring" loading="lazy">
+              </div>
+              <div class="example-text">
+                <span class="example-name">Structural monitoring</span>
+                <p>Identify changes in buildings, infrastructure and mechanical systems.</p>
+              </div>
+            </li>
+            <li class="example">
+              <div class="example-image">
+                <img src="assets/health.webp" alt="Health and wearables" loading="lazy">
+              </div>
+              <div class="example-text">
+                <span class="example-name">Health and wearables</span>
+                <p>Recognize relevant physiological events without continuous data transmission.</p>
+              </div>
+            </li>
+            <li class="example">
+              <div class="example-image">
+                <img src="assets/enviroment.webp" alt="Smart environments" loading="lazy">
+              </div>
+              <div class="example-text">
+                <span class="example-name">Smart environments</span>
+                <p>Detect changes in occupancy, activity and environmental conditions.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="deployment" class="section deployment-section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">How deployment works</div>
+          <h2 class="full-title">From raw sensor data to a chip that keeps improving.</h2>
+        </div>
+
+        <div class="cycle">
+          <ol class="cycle-steps">
+            <li class="cycle-step"><div class="cycle-node"><span>01</span></div><div class="cycle-text"><h3>Sensor data collection</h3><p>Capture vibration, sound or biosignals from the equipment in real conditions.</p></div></li>
+            <li class="cycle-step"><div class="cycle-node"><span>02</span></div><div class="cycle-text"><h3>Model training</h3><p>Train a hardware-aware model matched to the chip's memory and compute.</p></div></li>
+            <li class="cycle-step"><div class="cycle-node"><span>03</span></div><div class="cycle-text"><h3>Chip programming</h3><p>Write the trained weights into on-chip FeRAM — they hold with the power off.</p></div></li>
+            <li class="cycle-step"><div class="cycle-node"><span>04</span></div><div class="cycle-text"><h3>Sensor integration</h3><p>Mount the programmed module onto the equipment; it runs standalone.</p></div></li>
+            <li class="cycle-step"><div class="cycle-node"><span>05</span></div><div class="cycle-text"><h3>Local anomaly detection</h3><p>The chip watches continuously and flags the drift toward failure on-device.</p></div></li>
+            <li class="cycle-step"><div class="cycle-node"><span>06</span></div><div class="cycle-text"><h3>Model updates</h3><p>Field data refines the model and reprograms the chip over its life.</p></div></li>
+          </ol>
+          <span class="cycle-pulse" aria-hidden="true"></span>
+
+          <div class="cycle-return" aria-hidden="true">
+            <span class="cycle-return-label">Model updates feed the next cycle</span>
+          </div>
+
+          <div class="cycle-loop">
+            <svg class="cycle-loop-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 1 1-2.4-5.9"></path><path d="M20.5 3.5v4.5h-4.5"></path></svg>
+            Step 06 loops back to Step 01
+          </div>
+        </div>
       </div>
     </section>
 
