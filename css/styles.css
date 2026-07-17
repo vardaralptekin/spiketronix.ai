@@ -2386,3 +2386,18 @@ h2 {
   .chip-pulse { stroke-dashoffset: 0; }
   .chip-scan { display: none; }
 }
+
+/* Team member contact email */
+.person-email {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--ink-muted);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.person-email:hover {
+  color: var(--teal-light);
+}
