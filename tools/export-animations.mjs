@@ -58,6 +58,11 @@ const TARGETS = [
   // heavy — render a smaller/slower GIF (the MP4 stays full quality).
   { name: 'hero-chip', selector: '.hero-visual', period: 7.0, scale: 1,
     gifWidth: 520, gifFps: 12, label: 'Hero chip — float + glow + scan' },
+  // Transparent variant: the chip .webp already has an alpha channel, so with the
+  // page backgrounds forced transparent we can export the chip + glow with NO dark
+  // box. MP4/H.264 can't hold alpha, so this emits GIF + APNG + alpha-WebM instead.
+  { name: 'hero-chip-transparent', selector: '.hero-visual', period: 7.0, scale: 1,
+    transparent: true, gifWidth: 480, gifFps: 12, label: 'Hero chip — transparent background' },
   { name: 'deployment-cycle', selector: '.cycle', period: 6.0,
     label: 'Deployment cycle' },
 ];
@@ -144,6 +149,15 @@ async function captureTarget(browser, t, baseURL) {
   // large hero/stack webps at high DPR at once can OOM and crash the renderer.)
   await page.waitForTimeout(1200);
 
+  // Transparent capture: strip every opaque background so the screenshot's alpha
+  // shows through (the chip .webp already has its own alpha; the glow is CSS).
+  if (t.transparent) {
+    await page.addStyleTag({ content:
+      'html,body,section,.hero,.hero-visual,.chip-photo{background:transparent !important;}' +
+      '.page-texture{display:none !important;}' });
+    await page.waitForTimeout(200);
+  }
+
   const box = await el.boundingBox();
   if (!box) throw new Error(`could not measure ${t.name} (${t.selector})`);
 
@@ -165,7 +179,8 @@ async function captureTarget(browser, t, baseURL) {
       root.querySelectorAll('svg').forEach(s => { try { s.setCurrentTime(tSec); } catch {} });
       root.getAnimations({ subtree: true }).forEach(a => { try { a.currentTime = tSec * 1000; } catch {} });
     }, { sel: t.selector, tSec });
-    await el.screenshot({ path: path.join(dir, `f${String(i).padStart(4, '0')}.png`), timeout: 20000 });
+    await el.screenshot({ path: path.join(dir, `f${String(i).padStart(4, '0')}.png`),
+      timeout: 20000, omitBackground: !!t.transparent });
   }
   await context.close();
   return { dir, frameCount };
@@ -178,6 +193,25 @@ function encode(name, dir, opts = {}) {
   const palette = path.join(dir, 'palette.png');
   const gifFps = opts.gifFps || GIF_FPS;
   const gifWidth = opts.gifWidth || GIF_WIDTH;
+  const sz = (p) => (fs.statSync(p).size / 1024).toFixed(0) + ' KB';
+
+  if (opts.transparent) {
+    // Alpha outputs — H.264/MP4 can't carry transparency.
+    const webm = path.join(OUT_DIR, `${name}.webm`);
+    const f = `fps=${gifFps},scale=${gifWidth}:-1:flags=lanczos`;
+    // Transparent GIF — the only transparent animation PowerPoint plays. Binary
+    // (1-bit) alpha via alpha_threshold, so the chip stays crisp; the soft glow
+    // gets a harder edge. dither=none keeps the file small.
+    ff(['-y', '-i', inPattern, '-vf', `${f},palettegen=reserve_transparent=1:stats_mode=diff`, palette]);
+    ff(['-y', '-framerate', String(FPS), '-i', inPattern, '-i', palette,
+      '-lavfi', `${f}[x];[x][1:v]paletteuse=alpha_threshold=128:dither=none`, '-loop', '0', gif]);
+    // WebM VP9 with alpha — smooth 8-bit alpha, tiny file. Best quality, but for
+    // Keynote / Google Slides / web (PowerPoint can't play WebM).
+    ff(['-y', '-framerate', String(FPS), '-i', inPattern,
+      '-c:v', 'libvpx-vp9', '-pix_fmt', 'yuva420p', '-b:v', '0', '-crf', '30',
+      '-auto-alt-ref', '0', webm]);
+    return { gif, webm, gifSize: sz(gif), webmSize: sz(webm) };
+  }
 
   // MP4 (H.264) — best quality/size, ideal for PowerPoint/Keynote video embeds.
   ff(['-y', '-framerate', String(FPS), '-i', inPattern,
@@ -193,7 +227,6 @@ function encode(name, dir, opts = {}) {
     '-lavfi', `${gifFilter}[x];[x][1:v]paletteuse=dither=bayer:bayer_scale=3`,
     '-loop', '0', gif]);
 
-  const sz = (p) => (fs.statSync(p).size / 1024).toFixed(0) + ' KB';
   return { mp4, gif, mp4Size: sz(mp4), gifSize: sz(gif) };
 }
 
@@ -225,8 +258,11 @@ async function main() {
       // A heavy target can crash the whole browser; relaunch if it died.
       if (!browser.isConnected()) browser = await chromium.launch();
       const { dir, frameCount } = await captureTarget(browser, t, baseURL);
-      const r = encode(t.name, dir, { gifFps: t.gifFps, gifWidth: t.gifWidth });
-      console.log(`${frameCount} frames → ${path.basename(r.gif)} (${r.gifSize}), ${path.basename(r.mp4)} (${r.mp4Size})`);
+      const r = encode(t.name, dir, { gifFps: t.gifFps, gifWidth: t.gifWidth, transparent: t.transparent });
+      const outs = t.transparent
+        ? `${path.basename(r.gif)} (${r.gifSize}), ${path.basename(r.webm)} (${r.webmSize})`
+        : `${path.basename(r.gif)} (${r.gifSize}), ${path.basename(r.mp4)} (${r.mp4Size})`;
+      console.log(`${frameCount} frames → ${outs}`);
     } catch (err) {
       console.log(`FAILED: ${err.message.split('\n')[0]}`);
     }

@@ -22,9 +22,16 @@ Files land in [`../exports/`](../exports):
 | `imc.*`              | In-memory compute — crossbar dataflow |
 | `hero-chip.*`        | Hero chip — float + glow + scan |
 | `deployment-cycle.*` | Deployment lifecycle |
+| `hero-chip-transparent.*` | Hero chip on a **transparent** background |
 
 Each name has a `.gif` and an `.mp4`. Every clip is exactly one animation loop,
 so it repeats seamlessly.
+
+**Transparent output:** targets flagged `transparent: true` (e.g.
+`hero-chip-transparent`) export **`.gif` + `.webm`** instead of `.mp4` — H.264/MP4
+can't carry an alpha channel. The transparent GIF is the only one PowerPoint
+animates (1-bit alpha, so the chip stays crisp but the soft glow edge hardens);
+the alpha WebM is smoother and far smaller, for Keynote / Google Slides / the web.
 
 ## Running it
 
